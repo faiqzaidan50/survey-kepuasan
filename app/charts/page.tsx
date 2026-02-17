@@ -1,12 +1,14 @@
-import { Suspense } from "react";
-import ChartsClient from "./ChartsClient";
+import dynamic from "next/dynamic";
 
-export const dynamic = "force-dynamic";
+const ChartsClient = dynamic(() => import("./ChartsClient"), {
+  ssr: false,
+});
 
 export default function ChartsPage() {
   return (
-    <Suspense fallback={<main style={{ maxWidth: 980, margin: "0 auto", padding: 8 }}><section className="card">Memuat charts…</section></main>}>
+    <main style={{ maxWidth: 980, margin: "0 auto", padding: 8 }}>
       <ChartsClient />
-    </Suspense>
+    </main>
   );
 }
+
