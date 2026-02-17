@@ -39,7 +39,7 @@ function round2(n: number) {
   return Math.round(n * 100) / 100;
 }
 
-export default function ChartsPage() {
+export default function ChartsClient() {
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(true);
 
