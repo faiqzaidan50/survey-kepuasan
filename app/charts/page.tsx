@@ -1,8 +1,6 @@
-import dynamic from "next/dynamic";
+"use client";
 
-const ChartsClient = dynamic(() => import("./ChartsClient"), {
-  ssr: false,
-});
+import ChartsClient from "./ChartsClient";
 
 export default function ChartsPage() {
   return (
